@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Vinod</title>
+    <title>Contact Vinod</title>
     <style>
       :root {
         color-scheme: light;
@@ -82,18 +82,32 @@
 
       h1 {
         margin: 0;
-        font-size: clamp(3rem, 12vw, 7.5rem);
-        line-height: 0.95;
+        font-size: clamp(2.75rem, 9vw, 6rem);
+        line-height: 0.98;
         font-weight: 780;
         letter-spacing: 0;
       }
 
       p {
-        max-width: 36rem;
+        max-width: 39rem;
         margin: 28px 0 0;
         color: var(--muted);
         font-size: clamp(1.05rem, 2.4vw, 1.25rem);
         line-height: 1.65;
+      }
+
+      .contact-link {
+        display: inline-block;
+        margin-top: 30px;
+        color: var(--accent);
+        font-size: clamp(1.1rem, 2.8vw, 1.4rem);
+        font-weight: 760;
+        text-decoration: none;
+      }
+
+      .contact-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 6px;
       }
 
       .rule {
@@ -137,15 +151,16 @@
     <nav aria-label="Primary">
       <a class="brand" href="hello-vinod.html">Vinod</a>
       <div class="links">
-        <a href="hello-vinod.html" aria-current="page">Home</a>
+        <a href="hello-vinod.html">Home</a>
         <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" aria-current="page">Contact</a>
       </div>
     </nav>
-    <main aria-label="Greeting">
-      <p class="eyebrow">A simple hello</p>
-      <h1>Hello,<br>Vinod.</h1>
-      <p>Minimal, calm, and ready to open in any browser.</p>
+    <main aria-label="Contact">
+      <p class="eyebrow">Contact</p>
+      <h1>Let us keep it simple.</h1>
+      <p>Reach Vinod with a short note, a clear idea, or the next thing worth building.</p>
+      <a class="contact-link" href="mailto:hello@example.com">hello@example.com</a>
       <div class="rule" aria-hidden="true"></div>
     </main>
     <footer>Made with care</footer>
