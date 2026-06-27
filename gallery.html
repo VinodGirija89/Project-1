@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Vinod</title>
+    <title>Gallery Vinod</title>
     <style>
       :root {
         color-scheme: light;
@@ -67,8 +67,9 @@
       }
 
       main {
-        width: min(100%, 680px);
+        width: min(100%, 920px);
         margin: auto;
+        padding: 72px 0 24px;
       }
 
       .eyebrow {
@@ -81,27 +82,63 @@
       }
 
       h1 {
+        max-width: 720px;
         margin: 0;
-        font-size: clamp(3rem, 12vw, 7.5rem);
-        line-height: 0.95;
+        font-size: clamp(2.75rem, 8vw, 5.8rem);
+        line-height: 0.98;
         font-weight: 780;
         letter-spacing: 0;
       }
 
       p {
-        max-width: 36rem;
-        margin: 28px 0 0;
+        max-width: 39rem;
+        margin: 24px 0 0;
         color: var(--muted);
-        font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+        font-size: clamp(1.05rem, 2.4vw, 1.2rem);
         line-height: 1.65;
       }
 
-      .rule {
-        width: 84px;
-        height: 4px;
-        margin-top: 34px;
-        border-radius: 999px;
-        background: var(--accent);
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 44px;
+      }
+
+      figure {
+        margin: 0;
+      }
+
+      .frame {
+        min-height: 220px;
+        border: 1px solid rgba(32, 33, 36, 0.10);
+        border-radius: 8px;
+        box-shadow: 0 20px 60px rgba(32, 33, 36, 0.08);
+      }
+
+      .frame.one {
+        background:
+          radial-gradient(circle at 24% 28%, rgba(255, 255, 255, 0.72) 0 12%, transparent 13%),
+          linear-gradient(135deg, #f5d7b8, #dce8dc 54%, #4d938c);
+      }
+
+      .frame.two {
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.55) 0 18%, transparent 18% 100%),
+          linear-gradient(160deg, #24332f, #7eb2a6 58%, #f8efe2);
+      }
+
+      .frame.three {
+        background:
+          radial-gradient(circle at 78% 28%, rgba(29, 118, 111, 0.72) 0 14%, transparent 15%),
+          linear-gradient(145deg, #fbfaf7, #c5d5cd 48%, #d7b98d);
+      }
+
+      figcaption {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 0.94rem;
+        line-height: 1.45;
       }
 
       footer {
@@ -110,6 +147,16 @@
         text-align: right;
         color: rgba(32, 33, 36, 0.46);
         font-size: 0.85rem;
+      }
+
+      @media (max-width: 760px) {
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .frame {
+          min-height: 180px;
+        }
       }
 
       @media (max-width: 520px) {
@@ -127,6 +174,10 @@
           padding-left: 0;
         }
 
+        main {
+          padding-top: 56px;
+        }
+
         footer {
           text-align: left;
         }
@@ -137,17 +188,30 @@
     <nav aria-label="Primary">
       <a class="brand" href="index.html">Vinod</a>
       <div class="links">
-        <a href="index.html" aria-current="page">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
         <a href="contact.html">Contact</a>
       </div>
     </nav>
-    <main aria-label="Greeting">
-      <p class="eyebrow">A simple hello</p>
-      <h1>Hello,<br>Vinod.</h1>
-      <p>Minimal, calm, and ready to open in any browser.</p>
-      <div class="rule" aria-hidden="true"></div>
+    <main aria-label="Gallery">
+      <p class="eyebrow">Gallery</p>
+      <h1>A small visual collection.</h1>
+      <p>Quiet compositions, warm tones, and a simple grid that keeps the page light.</p>
+      <section class="gallery" aria-label="Featured gallery items">
+        <figure>
+          <div class="frame one" aria-hidden="true"></div>
+          <figcaption>Soft morning palette with a clean, open feel.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame two" aria-hidden="true"></div>
+          <figcaption>Deep contrast balanced by muted natural color.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame three" aria-hidden="true"></div>
+          <figcaption>Minimal geometry with a calm focal point.</figcaption>
+        </figure>
+      </section>
     </main>
     <footer>Made with care</footer>
   </body>
