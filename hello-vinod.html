@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Vinod</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #202124;
+        --muted: #6b7280;
+        --paper: #f7f4ee;
+        --accent: #1d766f;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 32px;
+        background:
+          linear-gradient(135deg, rgba(29, 118, 111, 0.10), transparent 42%),
+          var(--paper);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      main {
+        width: min(100%, 680px);
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(3rem, 12vw, 7.5rem);
+        line-height: 0.95;
+        font-weight: 780;
+        letter-spacing: 0;
+      }
+
+      p {
+        max-width: 36rem;
+        margin: 28px 0 0;
+        color: var(--muted);
+        font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+        line-height: 1.65;
+      }
+
+      .rule {
+        width: 84px;
+        height: 4px;
+        margin-top: 34px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      footer {
+        position: fixed;
+        right: 24px;
+        bottom: 20px;
+        color: rgba(32, 33, 36, 0.46);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 520px) {
+        body {
+          place-items: end start;
+          padding: 28px;
+        }
+
+        footer {
+          position: static;
+          margin-top: 56px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main aria-label="Greeting">
+      <p class="eyebrow">A simple hello</p>
+      <h1>Hello,<br>Vinod.</h1>
+      <p>Minimal, calm, and ready to open in any browser.</p>
+      <div class="rule" aria-hidden="true"></div>
+    </main>
+    <footer>Made with care</footer>
+  </body>
+</html>
